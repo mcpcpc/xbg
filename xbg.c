@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
     int      nbr;
 
     if ((argc == 2) && (strcmp_c("-v", argv[1]) == 0)) {
-        ret = die("xbg-0.0.1, © 2020 Michael Czigler, see LICENSE for details\n");
+        ret = die("xbg-0.0.2, © 2020 Michael Czigler, see LICENSE for details\n");
     }
     if ((ret == 0) && (argc != 2)) {
         ret = die("usage: xbg [color] [-v]\n");
