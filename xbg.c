@@ -60,7 +60,7 @@ static uint32_t nameToPixel(char * name, uint32_t pixel) {
             scre->default_colormap, ecolor.red, ecolor.green, ecolor.blue);
         xcb_alloc_color_reply_t  * acr = xcb_alloc_color_reply(dpy, acc, NULL);
         if (acr != NULL) {
-            ret = ecolor.pixel;
+            ret = acr->pixel;
         } else {
             die("unable to allocate color on display\n");
             ret = 0;
