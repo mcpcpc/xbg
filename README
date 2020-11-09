@@ -12,6 +12,11 @@ USAGE
 
     xbg [color] [-v]
 
+DEPENDENCIES
+============
+
+Requires both libxcb and xcb-util.
+
 INSTALL
 =======
 
