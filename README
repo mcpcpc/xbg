@@ -1,0 +1,41 @@
+xbg - a tiny XCB root window color setter
+
+FEATURES
+========
+
+*   changes the root window background to a specified X11 color name.
+    For a more complete X11 color names list, refer to the following 
+    site: https://en.wikipedia.org/wiki/X11_color_names
+
+USAGE
+=====
+
+    xbg [color] [-v]
+
+INSTALL
+=======
+
+Building and installing from source:
+    git clone https://github.com/mcpcpc/xbg
+    cd xbg
+    make
+    sudo make install
+
+Building and installing on KISS Linux:
+    kiss b xbg
+    kiss i xbg
+
+EXAMPLES
+========
+
+Check your xbg installed version:
+    xbg -v
+
+Set a new background color (i.e. red):
+    xbg red
+
+CONTACT
+=======
+
+For questions or issues, please contact info[at]mcpcpc[dot]com.
+
