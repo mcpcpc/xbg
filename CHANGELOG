@@ -14,4 +14,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.0.3] - 2020-11-29
 ### Removed
-- xcb_aux.h header
+- xcb_aux.h header.
