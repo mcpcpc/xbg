@@ -2,7 +2,6 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include <xcb/xcb.h>
-#include <xcb/xcb_aux.h>
 
 static xcb_connection_t * dpy;
 static xcb_screen_t     * scre;
@@ -73,7 +72,6 @@ static uint32_t nameToPixel(char * name, uint32_t pixel) {
 int main(int argc, char *argv[]) {
     int      ret = 0;
     char   * solid = NULL;
-    int      nbr;
 
     if ((argc == 2) && (strcmp_c("-v", argv[1]) == 0)) {
         ret = die("xbg-0.0.2, © 2020 Michael Czigler, see LICENSE for details\n");
@@ -88,14 +86,14 @@ int main(int argc, char *argv[]) {
         ret = die("no color provided\n");
     }
     if (ret == 0) {
-        dpy = xcb_connect(NULL, &nbr);
+        dpy = xcb_connect(NULL, NULL);
         int errno = xcb_connection_has_error(dpy);
         if (errno > 0) {
             ret = die("unable to open display\n");
         }
     }
     if (ret == 0) {
-        scre = xcb_aux_get_screen(dpy, nbr);
+		scre = xcb_setup_roots_iterator(xcb_get_setup(dpy)).data;
         root = scre->root;
         uint32_t params[1] = { nameToPixel(solid, scre->black_pixel) };
         xcb_change_window_attributes(dpy, root, XCB_CW_BACK_PIXEL, params);
